@@ -24,9 +24,11 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                <a href="#" class="btn btn-outline-light me-3">
-                    <i class="fas fa-shopping-cart me-1"></i>Giỏ hàng
-                </a>
+                <button class="btn btn-outline-light me-2" id="cartBtn" data-bs-toggle="modal"
+                    data-bs-target="#cartModal">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge bg-danger" id="cartCount">0</span>
+                </button>
                 <a href="#" class="btn btn-primary">
                     <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
                 </a>
@@ -34,3 +36,28 @@
         </div>
     </div>
 </nav>
+
+<!-- Shopping Cart Modal: đặt ngoài navbar để tránh xung đột z-index/transform -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-shopping-cart me-2"></i>Giỏ hàng
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <div class="d-flex justify-content-between w-100">
+                    <h5>Tổng cộng: <span id="cartTotal">0đ</span></h5>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-credit-card me-2"></i>Thanh toán
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
